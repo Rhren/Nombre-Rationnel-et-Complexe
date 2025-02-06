@@ -6,7 +6,19 @@ Rationnel::Rationnel()
 {
     num;
     deno;
-
+}
+Rationnel::~Rationnel()
+{
+    num;
+    deno;
+}
+int Rationnel::getNum()
+{
+    return (num);
+}
+int Rationnel::getDeno()
+{
+    return (deno);
 }
 void Rationnel::afficher(std::string op,Rationnel n2,Rationnel r)
 {
@@ -54,7 +66,6 @@ Rationnel Rationnel::multiplication(Rationnel n2)
     Rationnel s;
     s.num = (num * n2.num);
     s.deno = deno * n2.deno;
-
     return (s);
 
 }
