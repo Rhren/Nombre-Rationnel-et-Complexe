@@ -9,6 +9,23 @@ Complexerationnel::Complexerationnel()
 Complexerationnel::~Complexerationnel()
 {
 }
+void Complexerationnel::setReel(int n,int d)
+{
+    
+   reel.setND(n,d);
+}
+Rationnel Complexerationnel::getReel()
+{
+    return (reel);
+}
+Rationnel Complexerationnel::getIm()
+{
+    return (im);
+}
+void Complexerationnel::setIm(int n,int d)
+{
+    im.setND(n,d);
+}
 void Complexerationnel::setValeur()
 {
     cout << "Entrer le reel: " << endl;
