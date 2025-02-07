@@ -26,8 +26,9 @@ Complexerationnel Arithmetique::addition(int a,Complexerationnel &C)
     C.setValeur();
     int n = C.getReel().getNum();
     int d = C.getReel().getDeno();
-    
-    S.setReel(a,n,d);
+    int num = (a * d) + n;
+
+    S.setReel(num,d);
     S.setIm(n,d);
     return (S);
 }
@@ -37,7 +38,27 @@ void Arithmetique::affichage(int a,Complexerationnel &C,Complexerationnel &R)
     cout << " = " << R.getReel().getNum() << "/" << R.getReel().getDeno() << " + (" << C.getIm().getNum() << "/" << C.getIm().getDeno() << ")i" << endl;
 
 }
+Complexerationnel Arithmetique::addition(Rationnel &R,Complexerationnel &C)
+{
+    Complexerationnel S;
+    int nr = R.getNum();
+    int dr = R.getDeno();
+    int nc = C.getReel().getNum();
+    int dc = C.getReel().getDeno();
 
+    int num = (nr * dc) + (nc * dr);
+    int deno = dc * dr;
+    S.setReel(num,deno);
 
-       /* static double addition(int a,double d)
-        static Complexerationnel addition(Rationnel &R,Complexerationnel &C)*/ 
+    return (S);
+}
+void Arithmetique::affichage(Rationnel &R,Complexerationnel &C,Complexerationnel &CR)
+{
+    cout << "==> " << R.getNum() << "/" << R.getDeno() << " + " << "(" << C.getReel().getNum() << "/" << C.getReel().getDeno() << " + (" << C.getIm().getNum() << "/" << C.getIm().getDeno() << ")i)";
+    cout << " = " << CR.getReel().getNum() << "/" << CR.getReel().getDeno() << " + (" << C.getIm().getNum() << "/" << C.getIm().getDeno() << ")i" << endl;
+
+}
+       
+       
+       
+       // static Complexerationnel addition(Rationnel &R,Complexerationnel &C)
